@@ -16,7 +16,64 @@ public class Level1_8 {
 		String output = "";
 		
 		/* 문제풀이 위치 */
-		
+		int 번호 = 0;
+		System.out.print("["+(++번호)+"]작성자 : ");
+		String a = scanner.nextLine();
+		System.out.print("["+번호+"]방문록 : ");
+		String b = scanner.nextLine();
+		output = " "+번호+"\t "+a+" \t "+b+"\n";
+		boardlist += output;
+		System.out.println(header+boardlist+footer);
+
+		System.out.print("["+(++번호)+"]작성자 : ");
+		a = scanner.nextLine();
+		System.out.print("["+번호+"]방문록 : ");
+		b = scanner.nextLine();
+		output = " "+번호+"\t "+a+" \t "+b+"\n";
+		boardlist += output;
+		System.out.println(header+boardlist+footer);
+
+		System.out.print("["+(++번호)+"]작성자 : ");
+		a = scanner.nextLine();
+		System.out.print("["+번호+"]방문록 : ");
+		b = scanner.nextLine();
+		output = " "+번호+"\t "+a+" \t "+b+"\n";
+		boardlist += output;
+		System.out.println(header+boardlist+footer);
+
+		System.out.print("["+(++번호)+"]작성자 : ");
+		a = scanner.nextLine();
+		System.out.print("["+번호+"]방문록 : ");
+		b = scanner.nextLine();
+		output = " "+번호+"\t "+a+" \t "+b+"\n";
+		boardlist += output;
+		System.out.println(header+boardlist+footer);
+
+		System.out.print("["+(++번호)+"]작성자 : ");
+		a = scanner.nextLine();
+		System.out.print("["+번호+"]방문록 : ");
+		b = scanner.nextLine();
+		output = " "+번호+"\t "+a+" \t "+b+"\n";
+		boardlist += output;
+		System.out.println(header+boardlist+footer);
+
+		System.out.print("["+(++번호)+"]작성자 : ");
+		a = scanner.nextLine();
+		System.out.print("["+번호+"]방문록 : ");
+		b = scanner.nextLine();
+		output = " "+번호+"\t "+a+" \t "+b+"\n";
+		boardlist += output;
+		System.out.println(header+boardlist+footer);
+
+		System.out.print("["+(++번호)+"]작성자 : ");
+		a = scanner.nextLine();
+		System.out.print("["+번호+"]방문록 : ");
+		b = scanner.nextLine();
+		output = " "+번호+"\t "+a+" \t "+b+"\n";
+		boardlist += output;
+		System.out.println(header+boardlist+footer);
+
+
 		/* ----------- */
 	}
 }
