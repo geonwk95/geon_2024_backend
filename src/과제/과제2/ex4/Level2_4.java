@@ -57,7 +57,15 @@ public class Level2_4 {
 
 */
 
-
+/*if(com == result){
+			System.out.println("result) 무승부");
+		} else if (com == 0 && result == 1) {System.out.println("result) com 승리");
+		} else if (com == 0 && result == 2) {System.out.println("result) player 승리");
+		} else if (com == 1 && result == 0) {System.out.println("result) player 승리");
+		} else if (com == 1 && result == 2) {System.out.println("result) com 승리");
+		} else if (com == 2 && result == 0) {System.out.println("result) com 승리");
+		} else if (com == 2 && result == 1) {System.out.println("result) player 승리");
+		}*/
 
 
 
