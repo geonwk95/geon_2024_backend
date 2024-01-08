@@ -3,12 +3,14 @@ package 과제.팀과제1계산기;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class Step1 {
+public class Step1_배열버전 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String 피연산자1 = "";
-        String 피연산자2 = "";
-        String 연산자 = "";
+//        String 피연산자1 = "";
+//        String 피연산자2 = "";
+//        String 연산자 = "";
+
+        String[] 연산자 = new String[3];
 
 
         BigDecimal num3 = new BigDecimal(0); // 임의의 저장 변수 누적용
@@ -17,20 +19,20 @@ public class Step1 {
         boolean run3 = true; // 수 유효성 검사 함수
         while (run3) {
             System.out.print("연산할 수를 입력하세요. : ");
-            피연산자1 = scanner.nextLine();
-            for (int i = 0; i <= 피연산자1.length() - 1; i++) {
-                char a = 피연산자1.charAt(i);
+            연산자[0] = scanner.nextLine();
+            for (int i = 0; i <= 연산자[0].length() - 1; i++) {
+                char a = 연산자[0].charAt(i);
                 //System.out.println((int)'0'); 48
                 //System.out.println((int)'9'); 57
 
                 if (48 <= (int) a && (int) a <= 57) {   // 아스키코드의 0 48 9는 57
-                    if (i ==피연산자1.length()-1){ run3 = false;}
+                    if (i ==연산자[0].length()-1){ run3 = false;}
                 } else {
                     System.out.println("숫자만 입력하세요."); break;
                 }
             }
         }
-        BigDecimal num1 = new BigDecimal(피연산자1);
+        BigDecimal num1 = new BigDecimal(연산자[0]);
 
 
 
@@ -39,20 +41,20 @@ public class Step1 {
         while (true){ // 반복문 시작
 
             System.out.print("연산자를 입력하세요. : ");
-            연산자 = scanner.nextLine();
+            연산자[2] = scanner.nextLine();
 
             boolean run4 = true; // 수 유효성 검사 함수
             while (run4) {  // 유효성 검사 반복
                 System.out.print("연산할 두번째 수를 입력하세요. : ");
-                피연산자2 = scanner.nextLine();
+                연산자[1] = scanner.nextLine();
 
-                for (int i = 0; i <= 피연산자2.length() - 1; i++) {
-                    char a = 피연산자2.charAt(i);
+                for (int i = 0; i <= 연산자[1].length() - 1; i++) {
+                    char a = 연산자[1].charAt(i);
                     //System.out.println((int)'0'); 48
                     //System.out.println((int)'9'); 57
 
                     if (48 <= (int) a && (int) a <= 57) {
-                        if (i == 피연산자2.length() - 1) {
+                        if (i == 연산자[1].length() - 1) {
                             run4 = false;
                         }
                     } else {
@@ -61,26 +63,26 @@ public class Step1 {
                     }
                 }
             }
-            BigDecimal num2 = new BigDecimal(피연산자2);
+            BigDecimal num2 = new BigDecimal(연산자[1]);
 
             boolean run2 = true;
             while (run2){ // 연산자 유효성 검사 반복문 및 조건 충족시 계산
-                if(연산자.equals("+")) {
+                if(연산자[2].equals("+")) {
                     BigDecimal 덧셈 = num1.add(num2);
                     System.out.printf("덧셈 결과: %s\n" , 덧셈);
                     num3 = num1.add(num2);
                     run2 = false;
-                } else if (연산자.equals("-")) {
+                } else if (연산자[2].equals("-")) {
                     BigDecimal 뺄셈 = num1.subtract(num2);
                     System.out.printf("뺄셈 결과: %s\n" , 뺄셈);
                     num3 = num1.subtract(num2);
                     run2 = false;
-                }else if (연산자.equals("*")) {
+                }else if (연산자[2].equals("*")) {
                     BigDecimal 곱셈 = num1.multiply(num2);
                     System.out.printf("곱셈 결과: %s\n" , 곱셈);
                     num3 = num1.multiply(num2);
                     run2 = false;
-                }else if (연산자.equals("/")) {
+                }else if (연산자[2].equals("/")) {
                     BigDecimal 나눗셈 = num1.divide(num2);
                     System.out.printf("나눗셈 결과: %s\n" , 나눗셈);
                     num3 = num1.divide(num2);
@@ -88,7 +90,7 @@ public class Step1 {
                 }else{
                     System.out.println("연산자는 \"+, -, *, /\"로만 입력해주세요\n");
                     System.out.print("연산자를 입력하세요. : ");
-                    연산자 = scanner.nextLine();
+                    연산자[2] = scanner.nextLine();
                     run2 = true;
                 }
             } // 연산자 유효성 반복문 끝
@@ -101,8 +103,8 @@ public class Step1 {
                 }
                 else if (ctinue.equals("N")) { //처음처럼 보이게
                     System.out.print("연산할 수를 입력하세요. : ");
-                    피연산자1 = scanner.nextLine();
-                    num1 = new BigDecimal(피연산자1);
+                    연산자[0] = scanner.nextLine();
+                    num1 = new BigDecimal(연산자[0]);
                     run=false;
                 }else{
                     System.out.println("Y/N 둘 중 하나만 입력하세요.");

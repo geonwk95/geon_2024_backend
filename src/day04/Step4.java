@@ -9,8 +9,9 @@ public class Step4 { // class s
 
         Scanner scanner = new Scanner(System.in);
         int money = 0; // 예금액
+        boolean run = true;
 
-        while(true){ // w s
+        while( run ){ // w s
             System.out.println("-------------------------");
             System.out.println("1.예금 2.출금 3.잔고 4.종료");
             System.out.println("-------------------------");
@@ -30,7 +31,7 @@ public class Step4 { // class s
             }
             if( ch == 4 ){
                 System.out.println("프로그램 종료");
-                break;
+                run = false;
             }
         } // w s
     } // main e
