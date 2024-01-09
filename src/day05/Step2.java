@@ -81,7 +81,7 @@ public class Step2 {//class start
         }
         System.out.println("sum : " + sum);
         double avg = (double) sum/3;
-        System.out.println("avg = " + avg);
+        System.out.printf("avg = %.1f\n" , avg);
 
         // p.173
             // new 연산자를 이용한 배열 선언
