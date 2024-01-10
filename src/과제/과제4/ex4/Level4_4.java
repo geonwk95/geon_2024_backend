@@ -13,12 +13,48 @@ public class Level4_4 {
 		String[] X_AXIS = new String[5];
 		int x = 0;
 		X_AXIS[ x ] = "★";
-
+		/*System.out.println(X_AXIS[0]);*/
 		while ( true ) {
 			/* 문제풀이 위치 */
+			for (int i = 0; i < X_AXIS.length; i++) {
+				System.out.print(X_AXIS[i]+"  ");
+				String[] a = new String[]{X_AXIS[i]};
+			} // f e
+			System.out.print("\n"+"1.전진 2.후진 선택>");
+			int ch = scanner.nextInt();
+			if (ch == 1) {
+				if (x < 4) {
+					x++;
+				}
+			}else {
+				System.out.println("다시입력해주세요");
+			}
+			/*for (int i = 0 ; i < X_AXIS.length ; i++){
+					if (i==x){
+						X_AXIS[i] = "★";
+					}else {
+						X_AXIS[i] = null;
+					}
+
+			}*/
+			if (ch == 2) {
+				if (x>0){
+					x--;
+				}
+			}
+			for (int i = 0 ; i < X_AXIS.length ; i++){
+				if (i==x){
+					X_AXIS[i] = "★";
+				}else {
+					X_AXIS[i] = null;
+				}
+
+			}
+
+
 
 			/* ----------- */
-		}
+		} // w e
 	}
 }
 /* 
