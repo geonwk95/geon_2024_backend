@@ -14,7 +14,14 @@ public class Level3_5 {
 		String authNumber = "";
 		
 		/* 문제풀이 위치 */
-		
+		 // 0 ~ 9
+		for (int i = 0; i <= 5; i++) {
+			int a = (int)(Math.random()*10);
+			authNumber += Integer.toString(a);
+
+		}System.out.println("본인확인 인증번호 : " + authNumber);
+
+
 		/* ----------- */
 
 	}
