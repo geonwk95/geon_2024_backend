@@ -9,7 +9,7 @@ public class Step4 { // c s
 
         // 1. Phone객체 100개를 저장할수 있는 Phone배열 선언
             // 등록전 : null X 100
-        Phone[] phoneBook = new Phone[3];
+        Phone[] phoneBook = new Phone[100];
 
         while ( true ){
 
