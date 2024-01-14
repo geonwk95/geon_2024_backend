@@ -13,7 +13,7 @@ public class Step4 {
 
             for (int i = 0 ; i < phoneBook.length; i++) {
                 if (phoneBook[i] != null) {
-                    System.out.printf("%2d %7s\t %15s\n", i+1, phoneBook[i].이름, phoneBook[i].전화번호);
+                    System.out.printf("%2d%7s\t%15s\n", i+1, phoneBook[i].이름, phoneBook[i].전화번호);
 
                 }
             } // f e

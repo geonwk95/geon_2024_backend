@@ -9,6 +9,6 @@ public class BankApplication {
      String 초기입금액;
 
     // 2. 생성자
-     Account
+
     // 3. 메소드
 }
