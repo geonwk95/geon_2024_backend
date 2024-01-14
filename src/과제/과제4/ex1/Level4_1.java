@@ -11,14 +11,16 @@ public class Level4_1 {
 		Scanner scanner = new Scanner(System.in);
 
 		int[] point = { 97 , 73 ,52 , 76 , 51 };
-
+		System.out.println(point.length);
 		/* 문제풀이 위치 */
 		System.out.print("앞쪽부터 : ");
 		for (int i = 0 ; i < point.length ; i++){
+							// 5
 			System.out.print(point[i]+" ");
 		}
 		System.out.print("\n"+"뒤쪽부터 : ");
-		for (int i = (point.length)-1 ; i >= 0 ; i--){
+		for (int i = point.length-1 ; i >= 0 ; i--){
+						// 4
 			System.out.print(point[i]+" ");
 		}
 

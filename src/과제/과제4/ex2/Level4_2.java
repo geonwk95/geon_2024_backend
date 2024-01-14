@@ -17,7 +17,6 @@ public class Level4_2 {
 			System.out.print("배열 길이 : ");
 			int a = scanner.nextInt();
 			students = new String[a];
-
 			for (int i = 0; i < students.length; i++) {
 				System.out.print(students[i]+"\t");
 			}
