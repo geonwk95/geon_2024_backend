@@ -11,8 +11,17 @@ public class MemberInfo {
 
     String 서비스 = "";
     int month;
+    int price;
     MemberInfo(){}
-    public MemberInfo(int no, String name, String id, String pw, String num, String birth,String 서비스,int month) {
+    public MemberInfo(int no,
+                      String name,
+                      String id,
+                      String pw,
+                      String num,
+                      String birth,
+                      String 서비스,
+                      int month,
+                      int price) {
         this.no = no;
         this.name = name;
         this.id = id;
@@ -21,6 +30,7 @@ public class MemberInfo {
         this.birth = birth;
         this.서비스 = 서비스;
         this.month = month;
+        this.price = price;
     }
 
 

@@ -14,11 +14,11 @@ public class main {
         while ( a ) {
 
 
-            System.out.println("===================구독 및 판매시스템=========================");
-            System.out.println("1.회원가입                  2.로그인              3.종료       ");
-            System.out.println("===========================================================");
+            System.out.println("===================구독 및 판매시스템===================");
+            System.out.println("| 1.회원가입\t\t\t2.로그인\t\t\t\t3.종료\t\t|");
+            System.out.println("=====================================================");
 
-
+            System.out.print("선택 > ");
             int ch = scanner.nextInt();
             if (ch == 1) { // 1.회원가입
                 // 1.입력받기
@@ -35,13 +35,13 @@ public class main {
                 System.out.print("생년월일 : ");
                 String birth = scanner.next();
                 // 2.객체생성
-                MemberInfo newMemberInfo = new MemberInfo(no, name, id, pw, num, birth ,"",0);
+                MemberInfo newMemberInfo = new MemberInfo(no, name, id, pw, num, birth ,"",0,0);
                 // 3. MemberInfo배열내 빈공간을 찾아서 해당 인덱스에 객체 넣기
                 for (int i = 0; i < user.length; i++) {
                     if (user[i] == null) {
                         user[i] = newMemberInfo;
 
-                        break;
+                        break; // 회원가입 성공 한번만 출력
                     }
                 }
                 System.out.println("회원가입 성공");
@@ -96,11 +96,12 @@ public class main {
                             System.out.println("상품명 : " + survice._class);
                             System.out.println("가격 : " + survice.price);
                             System.out.println("용량 : " + survice.tb);
-                            System.out.println("월 : " + survice.month);
+                            System.out.println("월 : " + survice.month +"개월");
                             System.out.println("인원 : " + survice.nOfP);
 
                             user[로그인위치].서비스 = survice._class;
                             user[로그인위치].month = survice.month;
+                            user[로그인위치].price = survice.price;
 
                         } else if (ch2 == 2) {
 
@@ -108,11 +109,12 @@ public class main {
                             System.out.println("상품명 : " + survice2._class);
                             System.out.println("가격 : " + survice2.price);
                             System.out.println("용량 : " + survice2.tb);
-                            System.out.println("월 : " + survice2.month);
+                            System.out.println("월 : " + survice2.month+"개월");
                             System.out.println("인원 : " + survice2.nOfP);
 
                             user[로그인위치].서비스 = survice2._class;
                             user[로그인위치].month = survice2.month;
+                            user[로그인위치].price = survice2.price;
 
                         } else if (ch2 == 3) {
 
@@ -120,11 +122,12 @@ public class main {
                             System.out.println("상품명 : " + survice3._class);
                             System.out.println("가격 : " + survice3.price);
                             System.out.println("용량 : " + survice3.tb);
-                            System.out.println("월 : " + survice3.month);
+                            System.out.println("월 : " + survice3.month+"개월");
                             System.out.println("인원 : " + survice3.nOfP);
 
                             user[로그인위치].서비스 = survice3._class;
                             user[로그인위치].month = survice3.month;
+                            user[로그인위치].price = survice3.price;
 
                         }
                     } else if (ch1 == 2) {
@@ -134,24 +137,24 @@ public class main {
                         String 내서비스 = user[로그인위치].서비스;
                         if (내서비스.equals(survice._class)) {
                             System.out.println("구독상품이름 : " + survice._class);
-                            System.out.println("가격 : " + survice.price);
+                            System.out.println("가격 : " + user[로그인위치].price);
                             System.out.println("용량 : " + survice.tb);
-                            System.out.println("월 : " + user[로그인위치].month);
+                            System.out.println("월 : " + user[로그인위치].month+"개월");
                             System.out.println("인원 : " + survice.nOfP);
 
                         } else if (내서비스.equals(survice2._class)) {
                             System.out.println("구독상품이름 : " + survice2._class);
-                            System.out.println("가격 : " + survice2.price);
+                            System.out.println("가격 : " + user[로그인위치].price);
                             System.out.println("용량 : " + survice2.tb);
-                            System.out.println("월 : " + user[로그인위치].month);
+                            System.out.println("월 : " + user[로그인위치].month+"개월");
                             System.out.println("인원 : " + survice2.nOfP);
 
 
                         } else if (내서비스.equals(survice3._class)) {
                             System.out.println("구독상품이름 : " + survice3._class);
-                            System.out.println("가격 : " + survice3.price);
+                            System.out.println("가격 : " + user[로그인위치].price);
                             System.out.println("용량 : " + survice3.tb);
-                            System.out.println("월 : " + user[로그인위치].month);
+                            System.out.println("월 : " + user[로그인위치].month+"개월");
                             System.out.println("인원 : " + survice3.nOfP);
                         }
                     } else if (ch1 == 3) {// 구독 연장
@@ -168,7 +171,7 @@ public class main {
                             }
                         System.out.println("이용금액은 "+금액+"원 입니다.");
                                 user[로그인위치].month += 입력개월;
-
+                                user[로그인위치].price += 금액;
 
                     } else if (ch1==4) {
                         System.out.println("로그아웃");
