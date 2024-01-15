@@ -7,8 +7,16 @@ public class Survice {
     int month = 1;
     int nOfP = 1;
 
-
-
+    @Override
+    public String toString() {
+        return "Survice{" +
+                "_class='" + _class + '\'' +
+                ", price=" + price +
+                ", tb='" + tb + '\'' +
+                ", month=" + month +
+                ", nOfP=" + nOfP +
+                '}';
+    }
 }
 
 
