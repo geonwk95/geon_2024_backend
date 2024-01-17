@@ -1,10 +1,11 @@
 package 과제.과제6;
 import java.util.Scanner;
 
-public class MemberSys { // class s 
+public class MemberSys { // class s
+	Member[] members = new Member[100];
 	public static void main(String[] args) {
 
-		Member[] members = new Member[100];
+
 		Scanner sc = new Scanner(System.in);
 
 
@@ -15,7 +16,7 @@ public class MemberSys { // class s
 			int ch = sc.nextInt();
 
 			if( ch == 1 ) {
-
+			회원가입();
 			}
 			else if( ch == 2 ) {
 
@@ -30,7 +31,23 @@ public class MemberSys { // class s
 		} // w e
 	} // m e
 
+	public static void 회원가입(){
+		Scanner scanner = new Scanner(System.in);
 
+		// 1. 입력받기
+		System.out.println("MemberSys.회원가입");
+		System.out.print("아이디 : "); String id = scanner.next();
+		System.out.print("비밀번호 : "); String pw = scanner.next();
+		System.out.print("이름 : "); String name = scanner.next();
+		System.out.print("전화번호 : "); String phone = scanner.next();
+		System.out.print("나이 : "); String age = scanner.next();
+
+		// 2. 객체화
+		MemberSys memberSys = new MemberSys();
+		for (int i = 0; i < member; i++) {
+
+		}
+	}
 } // class e
 
 
