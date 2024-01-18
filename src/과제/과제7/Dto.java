@@ -1,22 +1,16 @@
-package 과제.과제6;
+package 과제.과제7;
 
-public class Member {
-
-    // 싱글톤
-
-
-
-    // 클래스 멤버
-    // 1. 필드
+public class Dto {
     private String id;
     private String pw;
     private String name;
     private String phone;
-    private String age;
+    private  String age;
 
-    // 2.생성자
-    public  Member(){}
-    public Member(String id , String pw , String name , String phone , String age){
+
+
+    public  Dto(){}
+    public Dto(String id , String pw , String name , String phone , String age){
         this.id = id;
         this.pw = pw;
         this.name = name;
@@ -24,19 +18,6 @@ public class Member {
         this.age = age;
     }
 
-    // 3.메소드
-
-
-    @Override
-    public String toString() {
-        return "Member{" +
-                "id='" + id + '\'' +
-                ", pw='" + pw + '\'' +
-                ", name='" + name + '\'' +
-                ", phone='" + phone + '\'' +
-                ", age='" + age + '\'' +
-                '}';
-    }
 
     public String getId() {
         return id;
@@ -77,6 +58,4 @@ public class Member {
     public void setAge(String age) {
         this.age = age;
     }
-
-
 }

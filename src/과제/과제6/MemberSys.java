@@ -2,11 +2,12 @@ package 과제.과제6;
 import java.util.Scanner;
 
 public class MemberSys { // class s
-	Member[] members = new Member[100];
+	static Member[] members = new Member[100];
+	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 
 
-		Scanner sc = new Scanner(System.in);
+
 
 
 		while(true) {
@@ -19,13 +20,13 @@ public class MemberSys { // class s
 			회원가입();
 			}
 			else if( ch == 2 ) {
-
+			로그인();
 			}
 			else if( ch == 3 ) {
-
+			아이디찾기();
 			}
 			else if( ch == 4 ) {
-
+			비밀번호찾기();
 			}
 
 		} // w e
@@ -43,10 +44,90 @@ public class MemberSys { // class s
 		System.out.print("나이 : "); String age = scanner.next();
 
 		// 2. 객체화
-		MemberSys memberSys = new MemberSys();
-		for (int i = 0; i < member; i++) {
+		Member member = new Member();
+		member.setId(id);
+		member.setPw(pw);
+		member.setName(name);
+		member.setPhone(phone);
+		member.setAge(age);
+		for (int i = 0 ; i < members.length ; i++){
+			if ( members[i] == null ){
+				members[i] = member;
 
+				break;
+			}
 		}
+		System.out.println("회원가입 성공");
+	}
+	public static void 로그인(){
+		Scanner scanner = new Scanner(System.in);
+		// 1. 입력받기
+		System.out.print("아이디 : "); String id = scanner.next();
+		System.out.print("비밀번호 : "); String pw = scanner.next();
+
+		// 2.객체화
+		Member member = new Member();
+		member.getId();
+		member.getPw();
+		boolean 일치여부 = false;
+		for (int i = 0 ; i < members.length ; i++){
+			if (members[i] != null){
+				if (members[i].getId().equals(id) && members[i].getPw().equals(pw)){
+					System.out.println("로그인 성공");
+					일치여부 =true;
+					break;
+				}else {
+					일치여부 =false;
+				}
+			}
+		}
+		if(!일치여부){System.out.println("로그인 실패");}
+	}
+	public static void 아이디찾기(){
+		Scanner scanner = new Scanner(System.in);
+		// 1.입력받기
+		System.out.print("이름 : "); String name = scanner.next();
+		System.out.print("전화번호 : "); String phone = scanner.next();
+
+		// 2.객체화
+		Member member = new Member();
+		member.getName();
+		member.getPhone();
+		boolean 일치여부 = false;
+		for (int i = 0 ; i < members.length ; i++){
+			if (members[i] != null){
+				if (members[i].getName().equals(name) && members[i].getPhone().equals(phone)){
+					System.out.println("찾고계신 아이디 : "+members[i].getId()+"입니다.");
+					break;
+				}else {
+					일치여부 = false;
+				}
+			}
+		}if (!일치여부){System.out.println("찾고계신 아이디가 없습니다.");}
+
+	}
+	public static void 비밀번호찾기(){
+		Scanner scanner = new Scanner(System.in);
+		// 1. 입력받기
+		System.out.print("아이디 : "); String id = scanner.next();
+		System.out.print("전화번호 : "); String phone = scanner.next();
+
+		// 2. 객체화
+		Member member = new Member();
+		member.getId();
+		member.getPhone();
+		boolean 일치여부 = false;
+		for (int i = 0 ; i < members.length ; i++){
+			if (members[i] != null){
+				if (members[i].getName().equals(id) && members[i].getPhone().equals(phone)){
+					System.out.println("찾고계신 비밀번호 : "+members[i].getPw()+"입니다.");
+					break;
+				}else {
+					일치여부 = false;
+				}
+			}
+		}if (!일치여부){System.out.println("찾고계신 비밀번호가 없습니다.");}
+
 	}
 } // class e
 

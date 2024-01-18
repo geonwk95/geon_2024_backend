@@ -9,7 +9,7 @@ public class Step1 { // 클래스 선언  // CLASS STRAT
     // 1. 소문자로 m
     // 2. 엔터
     // 3. sout -> 엔터
-    // 4. System.out.printf("하고싶은말");
+    // 4. System.out.println("하고싶은말");
     // 5. [실행]컨트롤+시프트+f10
     public static void main(String[] args) { // main start
 
