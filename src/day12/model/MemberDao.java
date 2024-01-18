@@ -70,7 +70,7 @@ public class MemberDao {
             }
         }
         return false;
-    } // f e
+    } // me e
 
 
 }

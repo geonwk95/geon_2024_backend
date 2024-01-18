@@ -98,6 +98,7 @@ public class MemberSys { // class s
 			if (members[i] != null){
 				if (members[i].getName().equals(name) && members[i].getPhone().equals(phone)){
 					System.out.println("찾고계신 아이디 : "+members[i].getId()+"입니다.");
+					일치여부 =true;
 					break;
 				}else {
 					일치여부 = false;
@@ -121,6 +122,7 @@ public class MemberSys { // class s
 			if (members[i] != null){
 				if (members[i].getName().equals(id) && members[i].getPhone().equals(phone)){
 					System.out.println("찾고계신 비밀번호 : "+members[i].getPw()+"입니다.");
+					일치여부 =true;
 					break;
 				}else {
 					일치여부 = false;
