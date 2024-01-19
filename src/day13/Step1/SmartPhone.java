@@ -18,7 +18,7 @@ public class SmartPhone extends Phone {
     public boolean wifi;
     // 2. 생성자
     public SmartPhone(String model , String color){
-        // - 생성자 첫줄에 부모 생성자 호출한다.( 생량가낭 - 컴파일시 자동추가 )
+        // - 생성자 첫줄에 부모 생성자 호출한다.( 생량가능 - 컴파일시 자동추가 )
         super();
 
 
