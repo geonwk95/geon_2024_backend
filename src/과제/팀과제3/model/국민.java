@@ -1,6 +1,6 @@
-package 팀과제.팀과제3.model;
+package 과제.팀과제3.model;
 
-public class 국민 extends DTO{
+public class 국민 extends Dto {
     public String 쿠폰;
 
     public final String 번호;
@@ -8,7 +8,7 @@ public class 국민 extends DTO{
         this.번호 ="2";
         this.계좌주=계좌주;
     }
-    public 국민(String 계좌번호, String 번호, int 입금액 ){
+    public 국민(String 계좌번호, int 입금액, String 번호  ){
 
         this.계좌번호=계좌번호;
         this.번호 = "2";

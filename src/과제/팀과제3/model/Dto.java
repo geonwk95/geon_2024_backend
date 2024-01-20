@@ -1,9 +1,19 @@
-package 팀과제.팀과제3.model;
+package 과제.팀과제3.model;
 
-public class DTO {
+public class Dto {
     protected String 계좌번호;
     protected String 계좌주;
     protected int 입금액;
+
+    public Dto(String 계좌번호, String 계좌주) {
+        this.계좌번호 = 계좌번호;
+        this.계좌주 = 계좌주;
+    }
+
+    public Dto(String 계좌번호, int 입금액) {
+        this.계좌번호 = 계좌번호;
+        this.입금액 = 입금액;
+    }
 
     public String get계좌번호() {
         return 계좌번호;
@@ -29,11 +39,11 @@ public class DTO {
         this.입금액 = 입금액;
     }
 
-    public DTO(String 계좌번호, String 계좌주, int 입금액) {
+    public Dto(String 계좌번호, String 계좌주, int 입금액) {
         this.계좌번호 = 계좌번호;
         this.계좌주 = 계좌주;
         this.입금액 = 입금액;
     }
-    public DTO(){}
+    public Dto(){}
 
 }
