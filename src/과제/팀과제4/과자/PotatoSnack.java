@@ -1,6 +1,8 @@
 package 과제.팀과제4.과자;
 
-public class PotatoSnack implements Snack{
+public class
+
+PotatoSnack implements Snack{
 
 
     @Override
