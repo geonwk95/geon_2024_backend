@@ -4,7 +4,9 @@ import day18.controller.BoardController;
 import day18.controller.MemberController;
 import day18.model.dao.MemberDao;
 import day18.model.dto.BoardDto;
+import day18.model.dto.CategoryDto;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WriteView {
@@ -18,7 +20,11 @@ public class WriteView {
     // 1. 글쓰기
     public void write(){
         System.out.println("카테고리 선택");
-        System.out.println("1.JAVA 2.C언어");
+        ArrayList<CategoryDto> categoryDtos = BoardController.getInstance().categoryPrint(new CategoryDto());
+        for (int i = 0 ; i < categoryDtos.size()  ; i++ ){
+            System.out.print(categoryDtos.get(i).getCno()+"  ");
+            System.out.println(categoryDtos.get(i).getCname()+"  ");
+        }
         System.out.println("선택>");
         int category = scanner.nextInt();
 
@@ -35,4 +41,8 @@ public class WriteView {
             System.out.println("등록실패");
         }
     }
-}
+
+
+
+
+    }

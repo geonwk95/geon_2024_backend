@@ -1,6 +1,5 @@
 package day18.model.dto;
 
-import day18.view.WriteView;
 public class BoardDto {
 
 
@@ -15,6 +14,7 @@ public class BoardDto {
 
 
 
+
         public BoardDto(){};
 
         public BoardDto(int mno, int cno, int bno, String btitle, String bcontent, String bdate, int bview) {
@@ -25,6 +25,7 @@ public class BoardDto {
             this.bcontent = bcontent;
             this.bdate = bdate;
             this.bview = bview;
+
         }
 
         public BoardDto(int mno , int cno, String btitle, String bcontent) {
@@ -74,8 +75,8 @@ public class BoardDto {
             this.bcontent = bcontent;
         }
 
-        public String getBdate() {
-            return bdate;
+        public String getBdate(String bdate) {
+            return this.bdate;
         }
 
         public void setBdate(String bdate) {
@@ -89,5 +90,7 @@ public class BoardDto {
         public void setBview(int bview) {
             this.bview = bview;
         }
-    }
+
+
+}
 
