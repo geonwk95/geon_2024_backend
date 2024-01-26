@@ -24,7 +24,7 @@ public class BoardView {
             System.out.print("선택 > "); int ch = scanner.nextInt();
 
             if (ch==1){
-
+                WriteView.getInstance().write();
             }else if (ch==2){
 
             }else if (ch==3){

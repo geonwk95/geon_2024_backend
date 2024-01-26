@@ -16,7 +16,7 @@ public class MainView {
     public  void run(){
         while (true){
             System.out.println("========= 메인페이지 ==========");
-            System.out.println("1.회원가입 2.로그인 3.아이디찾기");
+            System.out.println("1.회원가입 2.로그인 ");
             try { // 만약에 try{} 안에서 예외가 발생하면 catch 이동
                 int ch = scanner.nextInt();
 
