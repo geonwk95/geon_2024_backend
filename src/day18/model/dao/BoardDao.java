@@ -80,7 +80,7 @@ public class BoardDao extends Dao {
 
             while ( resultSet.next() ){
                 BoardDto dto = new BoardDto();
-                dto.
+                /*dto.*/
             }
 
         }catch (Exception e){
