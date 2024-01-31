@@ -20,7 +20,7 @@ create table member(
     primary key(mno)
 );
 
-select * from member;
+
 
 insert into member values(
 	1 , 'qwer' , '1234' , '010-1111-1111' , '유재석'
@@ -34,29 +34,30 @@ insert into member values(
 drop table if exists monsterlist;
 
 create table monsterlist(
-	stepno char(3)  ,
+	lino int auto_increment ,
+    stepno int ,
     img longtext not null  ,
-    stat3 int not null ,
-    stat4 int not null ,
-    primary key(stepno)
+    iq int not null ,
+    strong int not null ,
+    primary key(lino)
 );
 
-select * from monsterlist;
+
 
 insert into monsterlist values(
-	'A_1' , 'img1' , 10 , 10 
-);
-
-insert into monsterlist values(
-	'A_2' , 'img2' , 20 , 25 
+	'1' ,'1', 'img1' , 10 , 10 
 );
 
 insert into monsterlist values(
-	'A_3' , 'img3' , 40 , 45
+	'2', '2' , 'img2' , 20 , 25 
 );
 
 insert into monsterlist values(
-	'B_1' , 'img4' , 11 , 9 
+	'3', '3' , 'img3' , 40 , 45
+);
+
+insert into monsterlist values(
+	'4', '1' , 'img4' , 11 , 9 
 );
 
 
@@ -66,104 +67,61 @@ drop table if exists monster;
 create table monster(
 	mno int auto_increment ,		 		 -- 회원번호
     nickname varchar(30) not null ,  		 -- 몬스터 이름
-    stepno char(3) not null unique ,		 -- 몬스터 번호
-    stat1 int not null ,			 		 -- 몬스터 체력
-    stat2 int not null ,			 		 -- 몬스터 스트레스
-	stat3 int not null ,			 		 -- 몬스터 지능
-    stat4 int not null ,        	   		 -- 몬스터 힘
-    foreign key(mno) references member(mno) ,-- 회원테이블 mno 참조 
-    foreign key(stepno) references monsterlist(stepno)	-- 몬스터리스트테이블 stepno 참조
+    lino int not null ,		 			-- 몬스터 번호
+    hp int default(100),			 		 -- 몬스터 체력
+    stress int default(0) ,			 		 -- 몬스터 스트레스
+	iq int default(10) ,			 		 -- 몬스터 지능
+    strong int default(10),        	   		 -- 몬스터 힘
+    primary key(mno),
+    foreign key(mno) references member(mno),  -- 회원테이블 mno 참조 
+    foreign key(lino) references monsterlist(lino)
+   	-- 몬스터리스트테이블 stepno 참조
 );
 
-select * from monster;
 
 insert into monster values(
-	1 , 'asd' , 'A_2' , 10 , 10 , 10 , 10 
+	1 , 'asd' , 1 , 10 , 10 , 10 , 10 
 );
 
 insert into monster values(
-	2 , 'qwe' , 'B_1' , 5 , 4 , 3 , 1
+	2 , 'qwe' , 4 , 5 , 4 , 3 , 1
 );
 
-# 이벤트 카테고리 테이블
-drop table if exists eventcategory;
-
-create table eventcategory(
-	cno int auto_increment ,
-    cname varchar(30) ,
-    primary key(cno)
-);
-
-select * from eventcategory;
-
-insert into eventcategory values(
-	1 , 'exercise'
-);
-
-insert into eventcategory values(
-	2 , 'eat'
-);
-
-insert into eventcategory values(
-	3 , 'study'
-);
-
-insert into eventcategory values(
-	4 , 'rest'
-);
-
-# 스탯 카테고리 테이블
-drop table if exists statcategory;
-
-create table statcategory(
-	sno int auto_increment ,
-    sname varchar(30) ,
-    primary key(sno)
-);
-
-select * from statcategory;
-
-insert into statcategory values(
-	1 , 'hp'
-);
-
-insert into statcategory values(
-	2 , 'stress'
-);
-
-insert into statcategory values(
-	3 , 'int'
-);
-
-insert into statcategory values(
-	4 , 'str'
-);
 
 
 # 이벤트 테이블
 drop table if exists event;
 
 create table event(
-	cno int auto_increment ,
+	eno int auto_increment ,
+    ename varchar(10) not null,
+    eimg longtext not null,
     statup int not null ,
     statdown int not null ,
-    primary key(cno) 
+    primary key(eno)
+    
 );
 
+
+
+insert into event values(
+	1 , 'exercise','...' ,4, 1
+);
+
+insert into event values(
+	2 , 'eat' ,'...',1, 2
+);
+
+insert into event values(
+	3 , 'study' ,'...',3, 2
+);
+
+insert into event values(
+	4 , 'rest', '...',4, 2
+);
+select * from member;
+select * from monsterlist;
+select * from monster;
+select * from statcategory;
 select * from event;
 
-insert into event values(
-	1 , 4 , 1
-);
-
-insert into event values(
-	2 , 1 , 0
-);
-
-insert into event values(
-	3 , 3 , 2
-);
-
-insert into event values(
-	4 , 0 , 2
-);
