@@ -64,18 +64,16 @@ insert into monsterlist values(
 # 몬스터 테이블
 drop table if exists monster;
 
-create table monster(
-	mno int auto_increment ,		 		 -- 회원번호
+create table monster(	
+    mno int auto_increment ,		 		 -- 회원번호
     nickname varchar(30) not null ,  		 -- 몬스터 이름
     lino int not null ,		 			-- 몬스터 번호
     hp int default(100),			 		 -- 몬스터 체력
     stress int default(0) ,			 		 -- 몬스터 스트레스
 	iq int default(10) ,			 		 -- 몬스터 지능
-    strong int default(10),        	   		 -- 몬스터 힘
-    primary key(mno),
-    foreign key(mno) references member(mno),  -- 회원테이블 mno 참조 
-    foreign key(lino) references monsterlist(lino)
-   	-- 몬스터리스트테이블 stepno 참조
+    strong int default(10),        	   		 -- 몬스터 힘    
+    foreign key(mno) references member(mno) on delete cascade,  -- 회원테이블 mno 참조 
+    foreign key(lino) references monsterlist(lino) on delete cascade   	-- 몬스터리스트테이블 stepno 참조
 );
 
 
@@ -122,6 +120,7 @@ insert into event values(
 select * from member;
 select * from monsterlist;
 select * from monster;
-select * from statcategory;
 select * from event;
 
+#delete from member where mno = 1;
+#delete from monsterlist where lino = 4;
